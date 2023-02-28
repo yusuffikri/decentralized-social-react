@@ -23,6 +23,7 @@ function App() {
 
   async function getPosts(){
     const response = await urlClient.query(queryExplorePublications).toPromise();
+    const posts = response.data.queryExplorePublications.items.filter((posts))
   }
 
   return (
