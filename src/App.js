@@ -18,8 +18,12 @@ function App() {
   async function getRecommendedProfiles(){
     const response = await urlClient.query(queryRecommendedProfiles).toPromise();
     const profiles = response.data.RecommendedProfiles.slice(0.5);
+    setProfiles(profiles);
   }
 
+  async function getPosts(){
+    const response = await urlClient.query(queryExplorePublications).toPromise();
+  }
 
   return (
     <div className="app">
