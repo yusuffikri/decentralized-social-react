@@ -33,6 +33,9 @@ function App() {
 
   async function follow(id){
     const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const contract = new ethers.Contract(LENS_HUB_CONTRACT_ADRESS, LENSHUB, provider.getSigner());
+    const tx = await contract.follow([parseInt(id)], [0x0]);
+    await tx.wait();
   }
   return (
     <div className="app">
