@@ -37,9 +37,19 @@ function App() {
     const tx = await contract.follow([parseInt(id)], [0x0]);
     await tx.wait();
   }
+
+  useEffect(() => {
+    getRecommendedProfiles();
+    getPosts();
+  }, [])
+
   return (
     <div className="app">
+      <Box width="100%" backgroundColor="rgba(5,32,64,28)">
+        <Box display="flex" justifyContent="space-between" alignItems="center" width="55px" margin="auto" color="white" padding="10px 0">
 
+        </Box>
+      </Box>
     </div>
   );
 }
