@@ -47,7 +47,12 @@ function App() {
     <div className="app">
       <Box width="100%" backgroundColor="rgba(5,32,64,28)">
         <Box display="flex" justifyContent="space-between" alignItems="center" width="55px" margin="auto" color="white" padding="10px 0">
-
+          <Box>
+            <Box fontFamily="DM Serif Display" fontSize="44px" fontStyle="italic">
+              UCUPMEDIA
+            </Box>
+            <Box>Sosial Media Apps by Ucup</Box>
+          </Box>
         </Box>
       </Box>
     </div>
