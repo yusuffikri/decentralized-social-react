@@ -3,6 +3,7 @@ import { urlClient, LENS_HUB_CONTRACT_ADRESS, queryRecommendedProfiles, queryExp
 import LENSHUB from "./lenshub.json"
 import { ethers } from "ethers";
 import {Box, Button, Image} from "@/chakra-ui/react"
+import { PossibleTypeExtensionsRule } from "graphql";
 
 function App() {
   const [accounts, setAccounts] = useState(null);
@@ -23,9 +24,16 @@ function App() {
 
   async function getPosts(){
     const response = await urlClient.query(queryExplorePublications).toPromise();
-    const posts = response.data.queryExplorePublications.items.filter((posts))
+    const posts = response.data.queryExplorePublications.items.filter((posts) => {
+    if (PossibleTypeExtensionsRule.profile) return posts;
+    return ""
+    });
+    setPosts(posts);
   }
 
+  async function follow(id){
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+  }
   return (
     <div className="app">
 
