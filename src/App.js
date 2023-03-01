@@ -53,6 +53,12 @@ function App() {
             </Box>
             <Box>Sosial Media Apps by Ucup</Box>
           </Box>
+          { accounts ? (
+<Box backgroundColor="000" padding="16px" borderRadius="6pc">
+  Connected 
+</Box>
+          ) : <Button onClick={signIn} color="rgba(5, 32, 64)" _hover={{ backgroundColor:"#808080" }}>
+            </Button>}
         </Box>
       </Box>
     </div>
