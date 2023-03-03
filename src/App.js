@@ -67,7 +67,12 @@ function App() {
       <Box display="flex" justifyContent="space-between" width="55%" margin="35px auto auto auto" color="white"
       >
         {/* POST */}
-        <Box width="65%" maxWidth="65%" minWidth="65%"></Box>
+        <Box width="65%" maxWidth="65%" minWidth="65%">
+          {posts.map((post) => (<Box marginBottom="25px" key={posts.id}
+          >
+
+          </Box>))}
+        </Box>
 
         {/* FRIENDS SUGGESTION */}
         <Box></Box>
