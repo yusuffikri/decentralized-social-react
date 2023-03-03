@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { urlClient, LENS_HUB_CONTRACT_ADRESS, queryRecommendedProfiles, queryExplorePublications} from './queries'
 import LENSHUB from "./lenshub.json"
 import { ethers } from "ethers";
-import {Box, Button, Image} from "@/chakra-ui/react"
+import {Box, Button, Image} from "@chakra-ui/react"
 import { PossibleTypeExtensionsRule } from "graphql";
 
 function App() {
@@ -58,8 +58,19 @@ function App() {
   Connected 
 </Box>
           ) : <Button onClick={signIn} color="rgba(5, 32, 64)" _hover={{ backgroundColor:"#808080" }}>
+            Connect
             </Button>}
         </Box>
+      </Box>
+
+      {/* CONTENT */}
+      <Box display="flex" justifyContent="space-between" width="55%" margin="35px auto auto auto" color="white"
+      >
+        {/* POST */}
+        <Box width="65%" maxWidth="65%" minWidth="65%"></Box>
+
+        {/* FRIENDS SUGGESTION */}
+        <Box></Box>
       </Box>
     </div>
   );
