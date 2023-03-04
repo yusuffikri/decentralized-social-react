@@ -68,9 +68,11 @@ function App() {
       >
         {/* POST */}
         <Box width="65%" maxWidth="65%" minWidth="65%">
-          {posts.map((post) => (<Box marginBottom="25px" key={posts.id}
+          {posts.map((post) => (<Box marginBottom="25px" key={posts.id} backgroundColor="rgba(5,32,64,28)" padding="40px 30px 40px 25px" borderRadius="6px"
           >
+            <Box display="flex">
 
+            </Box>
           </Box>))}
         </Box>
 
