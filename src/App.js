@@ -71,6 +71,13 @@ function App() {
           {posts.map((post) => (<Box marginBottom="25px" key={posts.id} backgroundColor="rgba(5,32,64,28)" padding="40px 30px 40px 25px" borderRadius="6px"
           >
             <Box display="flex">
+              {/* Profiles Image */}
+              <Box width="75px" height="75px" marginTop="8px" >
+                <img alt="profiles" src={posts.profile ? post.profile.picture?.original?.url : "/default-avatar.png"}/>
+              </Box>
+
+              {/* Post Content */}
+              <Box></Box>
 
             </Box>
           </Box>))}
