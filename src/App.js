@@ -54,9 +54,9 @@ function App() {
             <Box>Sosial Media Apps by Ucup</Box>
           </Box>
           { accounts ? (
-<Box backgroundColor="000" padding="16px" borderRadius="6pc">
-  Connected 
-</Box>
+          <Box backgroundColor="000" padding="16px" borderRadius="6pc">
+            Connected 
+          </Box>
           ) : <Button onClick={signIn} color="rgba(5, 32, 64)" _hover={{ backgroundColor:"#808080" }}>
             Connect
             </Button>}
@@ -73,7 +73,7 @@ function App() {
             <Box display="flex">
               {/* Profiles Image */}
               <Box width="75px" height="75px" marginTop="8px" >
-                <img alt="profiles" src={posts.profile ? post.profile.picture?.original?.url : "/default-avatar.png"}/>
+                <img alt="profiles" src={posts.profile ? post.profile.picture?.original?.url : "/default-avatar.png"} width="75px" height="75px" onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src= "/default-avatar.png"}}/> 
               </Box>
 
               {/* Post Content */}
