@@ -84,7 +84,10 @@ function App() {
             <Box display="flex">
               {/* Profiles Image */}
               <Box width="75px" height="75px" marginTop="8px" >
-                <img alt="profiles" src={parseImageUrl(post)}/> 
+                <img alt="profiles" src={parseImageUrl(post)}  width="75px" height="75px" onError={({ currentTarget}) => {
+                  currentTarget.onerror = null;
+                  currentTarget.src = "/default-avatar.png";
+                }}/> 
               </Box>
 
               {/* Post Content */}
@@ -106,7 +109,19 @@ function App() {
         </Box>
 
         {/* FRIENDS SUGGESTION */}
-        <Box></Box>
+        <Box width="30%" backgroundColor="rgba(5,32,64,28)" padding="40px 25px" borderRadius="6px" height="fit-content">
+          <Box fontFamily="Poppins">FRIEND SUGGESTION</Box>
+          <Box>
+            {profiles.map((profile, i ) => (
+              <Box key={profile.id} margin="30px 0" display="flex" alignItems="center" height="40px" _hover={{ color: "#808080", cursor: "pointer" }} >
+                <img alt="profiles" src={parseImageUrl(profiles)} width="75px" height="75px" onError={({ currentTarget}) => {
+                  currentTarget.onerror = null;
+                  currentTarget.src = "/default-avatar.png";
+                }}/> 
+              </Box>
+            ))}
+          </Box>
+          </Box> 
       </Box>
     </div>
   );
