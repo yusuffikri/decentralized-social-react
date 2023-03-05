@@ -48,9 +48,8 @@ function App() {
       const url = post.profile.picture?.original?.url;
       if (url && url.startsWith("ipfs:")){
         const ipfsHash = url.split("//")[1];
-        return `https//:gateway.pinata.cloud/ipfs${ipfsHash}`;
+        return `https//:gateway.pinata.cloud/ipfs/${ipfsHash}`;
       }
-
       return url;
     }
   }
@@ -85,11 +84,20 @@ function App() {
             <Box display="flex">
               {/* Profiles Image */}
               <Box width="75px" height="75px" marginTop="8px" >
-                <img alt="profiles" src={posts.profile ? post.profile.picture?.original?.url : "/default-avatar.png"} width="75px" height="75px" onError={({currentTarget}) => {currentTarget.onerror = null; currentTarget.src= "/default-avatar.png"}}/> 
+                <img alt="profiles" src={parseImageUrl(post)}/> 
               </Box>
 
               {/* Post Content */}
-              <Box></Box>
+              <Box flexGrow={1} marginLeft="20px"></Box>
+              <Box display="flex" justtifyContent="space-between">
+                <Box fontFamily="Poppins" fontSize="24px">
+                  {post.profile?.handle}
+                </Box>
+                <Box height="50px" _hover={{  cursor:"pointer" }}>
+                  <Image alt="follow icon" src="/follow-icon.png" height="50px" width="50px" onClick={() => follow(post.id)}/>
+
+                </Box>
+              </Box>
 
             </Box>
           </Box>))}
