@@ -43,9 +43,9 @@ function App() {
     getPosts();
   }, [])
 
-  const parseImageUrl = (post) => {
-    if (post.profile) {
-      const url = post.profile.picture?.original?.url;
+  const parseImageUrl = (profile) => {
+    if (profile) {
+      const url = posts.profile.picture?.original?.url;
       if (url && url.startsWith("ipfs:")){
         const ipfsHash = url.split("//")[1];
         return `https//:gateway.pinata.cloud/ipfs/${ipfsHash}`;
@@ -84,7 +84,7 @@ function App() {
             <Box display="flex">
               {/* Profiles Image */}
               <Box width="75px" height="75px" marginTop="8px" >
-                <img alt="profiles" src={parseImageUrl(post)}  width="75px" height="75px" onError={({ currentTarget}) => {
+                <img alt="profiles" src={parseImageUrl(post.profile)}  width="75px" height="75px" onError={({ currentTarget}) => {
                   currentTarget.onerror = null;
                   currentTarget.src = "/default-avatar.png";
                 }}/> 
