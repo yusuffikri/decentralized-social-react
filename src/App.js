@@ -65,7 +65,7 @@ function App() {
             <Box fontFamily="Poppins">Sosial Media Apps by Ucup</Box>
           </Box >
           { accounts ? (
-          <Box backgroundColor="000" padding="16px" borderRadius="6pc">
+          <Box backgroundColor="000" padding="16px" borderRadius="6px">
             Connected 
           </Box>
           ) : <Button margin="24px 0"  padding="16px 48px" onClick={signIn} color="rgba(5, 32, 64)" _hover={{ backgroundColor:"#808080" }}>
@@ -98,7 +98,9 @@ function App() {
 
                 </Box>
               </Box>
-
+              <Box overflowWrap="anywhere" fontSize="14px">
+                {post.metadata?.content}
+              </Box>
             </Box>
           </Box>))}
         </Box>
