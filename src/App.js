@@ -43,6 +43,15 @@ function App() {
     getPosts();
   }, [])
 
+  const parseImageUrl = (post) => {
+    if (post.profile) {
+      const url = post.profile.picture?.original?.url;
+      if (url && url.startsWith("ipfs:")){
+        const ipfsHash = url.split("//")[1];
+      }
+    }
+  }
+
   return (
     <div className="app">
       <Box width="100%" backgroundColor="rgba(5,32,64,28)" >
