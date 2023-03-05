@@ -114,10 +114,15 @@ function App() {
           <Box>
             {profiles.map((profile, i ) => (
               <Box key={profile.id} margin="30px 0" display="flex" alignItems="center" height="40px" _hover={{ color: "#808080", cursor: "pointer" }} >
-                <img alt="profiles" src={parseImageUrl(profiles)} width="75px" height="75px" onError={({ currentTarget}) => {
+                <img alt="profiles" src={parseImageUrl(profiles)} width="40px" height="40px" onError={({ currentTarget}) => {
                   currentTarget.onerror = null;
                   currentTarget.src = "/default-avatar.png";
-                }}/> 
+                }}/>
+                <Box marginLeft="25px">
+                  <h4>{profile.name}</h4>
+                  <p>{profile.handle}</p>
+
+                </Box>
               </Box>
             ))}
           </Box>
