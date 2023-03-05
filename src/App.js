@@ -48,7 +48,10 @@ function App() {
       const url = post.profile.picture?.original?.url;
       if (url && url.startsWith("ipfs:")){
         const ipfsHash = url.split("//")[1];
+        return `https//:gateway.pinata.cloud/ipfs${ipfsHash}`;
       }
+
+      return url;
     }
   }
 
