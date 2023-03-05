@@ -45,19 +45,19 @@ function App() {
 
   return (
     <div className="app">
-      <Box width="100%" backgroundColor="rgba(5,32,64,28)">
-        <Box display="flex" justifyContent="space-between" alignItems="center" width="55px" margin="auto" color="white" padding="10px 0">
+      <Box width="100%" backgroundColor="rgba(5,32,64,28)" >
+        <Box display="flex"justifyContent="space-between" alignItems="left" margin="0 64px" color="white" padding="10px 10px">
           <Box>
-            <Box fontFamily="DM Serif Display" fontSize="44px" fontStyle="italic">
+            <Box  fontFamily="Poppins" fontSize="44px" fontStyle="italic">
               UCUPMEDIA
             </Box>
-            <Box>Sosial Media Apps by Ucup</Box>
+            <Box fontFamily="Poppins">Sosial Media Apps by Ucup</Box>
           </Box >
           { accounts ? (
           <Box backgroundColor="000" padding="16px" borderRadius="6pc">
             Connected 
           </Box>
-          ) : <Button margin="0 64px" padding="16px 48px" onClick={signIn} color="rgba(5, 32, 64)" _hover={{ backgroundColor:"#808080" }}>
+          ) : <Button margin="24px 0"  padding="16px 48px" onClick={signIn} color="rgba(5, 32, 64)" _hover={{ backgroundColor:"#808080" }}>
             Connect
             </Button>}
         </Box>
